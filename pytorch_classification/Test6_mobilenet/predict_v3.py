@@ -6,7 +6,7 @@ from PIL import Image
 from torchvision import transforms
 import matplotlib.pyplot as plt
 
-from model import resnet34
+from model_v3 import mobilenet_v3_large
 
 
 def main():
@@ -36,14 +36,10 @@ def main():
         class_indict = json.load(f)
 
     # create model
-    model = resnet34(num_classes=5).to(device)
-
+    model = mobilenet_v3_large(num_classes=5).to(device)
     # load model weights
-    weights_path = "./resNet34.pth"
-    assert os.path.exists(weights_path), "file: '{}' dose not exist.".format(weights_path)
-    model.load_state_dict(torch.load(weights_path, map_location=device))
-
-    # prediction
+    model_weight_path = "./MobileNetV3.pth"
+    model.load_state_dict(torch.load(model_weight_path, map_location=device))
     model.eval()
     with torch.no_grad():
         # predict class
