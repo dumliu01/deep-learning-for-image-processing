@@ -174,11 +174,11 @@ if __name__ == '__main__':
 
     # 数据集所在根目录
     # https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz
-    parser.add_argument('--data-path', type=str, default="/home/wz/data_set/flower_data/flower_photos")
+    parser.add_argument('--data-path', type=str, default="../../data_set/flower_photos2/flower_photos")
 
     # resnet34 官方权重下载地址
     # https://download.pytorch.org/models/resnet34-333f7ec4.pth
-    parser.add_argument('--weights', type=str, default='resNet34.pth',
+    parser.add_argument('--weights', type=str, default='resnet34-pre.pth',
                         help='initial weights path')
     parser.add_argument('--freeze-layers', type=bool, default=False)
     # 不要改该参数，系统会自动分配

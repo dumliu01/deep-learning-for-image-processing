@@ -125,12 +125,13 @@ if __name__ == '__main__':
     # 数据集所在根目录
     # https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz
     parser.add_argument('--data-path', type=str,
-                        default="/data/flower_photos")
+                        default="../../data_set/flower_photos2/flower_photos")
+    # default="/data/flower_photos")
     parser.add_argument('--model-name', default='RegNetY_400MF', help='create model name')
 
     # 预训练权重下载地址
     # 链接: https://pan.baidu.com/s/1XTo3walj9ai7ZhWz7jh-YA  密码: 8lmu
-    parser.add_argument('--weights', type=str, default='regnety_400mf.pth',
+    parser.add_argument('--weights', type=str, default='./torch_regnet/regnety_400mf.pth',
                         help='initial weights path')
     parser.add_argument('--freeze-layers', type=bool, default=False)
     parser.add_argument('--device', default='cuda:0', help='device id (i.e. 0 or 0,1 or cpu)')

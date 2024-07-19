@@ -10,3 +10,23 @@
 7. 在`predict.py`脚本中将`img_path`设置成你自己需要预测的图片绝对路径
 8. 设置好权重路径`model_weight_path`和预测的图片路径`img_path`就能使用`predict.py`脚本进行预测了
 9. 如果要使用自己的数据集，请按照花分类数据集的文件结构进行摆放(即一个类别对应一个文件夹)，并且将训练以及预测脚本中的`num_classes`设置成你自己数据的类别数
+
+dum编译更新：
+
+1. 错误信息：
+AttributeError:module ‘distutils‘ has no attribute ‘version
+
+解决办法：
+降低setuptools的版本
+pip install setuptools==59.5
+
+
+2. 错误信息： 
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+解决办法：
+降低protobuf版本
+pip install protobuf==3.20.1
